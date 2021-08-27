@@ -68,6 +68,10 @@
   padding: 8px;
   border-radius: 8px;
   cursor: pointer;
+  margin: 0 0 0 10px;
+}
+.blog-details a {
+  text-decoration: none;
 }
 
 /* create new blog form */
@@ -100,4 +104,21 @@
   padding: 8px;
   border-radius: 8px;
   cursor: pointer;
+}
+
+/* 404 page not found */
+.not-found{
+  text-align: center;
+}
+.not-found h2{
+  color: #f1356d;
+}
+.not-found button{
+  background: #f1356d;
+  color: #fff;
+  border: 0;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin: 10px 0 0 0;
 }

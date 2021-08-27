@@ -1,4 +1,4 @@
-import { useHistory, useParams } from "react-router-dom";
+import { Link, useHistory, useParams } from "react-router-dom";
 import useFetch from "./useFetch";
 
 const BlogDetails = () => {
@@ -24,7 +24,11 @@ const BlogDetails = () => {
                     <h2>{blog.name}</h2>
                     <p>Added By { blog.user ? blog.user.firstName : 'Unknown'} { blog.user && blog.user.lastName }</p>
                     {/* <p>Added By { blog.user ? ({ blog.user.firstName } { blog.user.lastName }): 'Unknown'}</p> */}
-                    <div>{blog.description}</div>
+                    <div>{blog.description}</div> 
+                                       
+                    <Link to={`/update/${blog.id}`}>
+                        <button>Edit</button>
+                    </Link>
                     <button onClick={handleClickDelete}>Delete</button>
                 </article>
             )}

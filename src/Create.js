@@ -6,21 +6,21 @@ const Create = () => {
     const [qty, setQuantity] = useState(0);
     const [description, setDescription] =useState('');
     const [userId, setAuthor] = useState(1);
-    const [isPending, setIsPending] = useState(false);
+    const [isWorking, setIsWorking] = useState(false);
     const history = useHistory();
 
     const handleSubmit = (e) => {
         e.preventDefault();
         const item = { name, qty, description, userId};
 
-        setIsPending(true);
+        setIsWorking(true);
     
         fetch('http://127.0.0.1:3000/items', {
             method: 'POST',
             headers: {"content-type": "application/json"},
             body: JSON.stringify(item)
         }).then(() => {
-            setIsPending(false);
+            setIsWorking(false);
             history.push('/');
         })
 
@@ -58,8 +58,8 @@ const Create = () => {
                     <option value="1">Jay Singh</option>
                     <option value="2">Donald Trump</option>
                 </select>
-                { !isPending && <button>Add Item</button> }
-                { isPending && <button disabled>Adding Item...</button> }
+                { !isWorking && <button>Add Item</button> }
+                { isWorking && <button disabled>Adding Item...</button> }
                 
             </form>
         </div>
